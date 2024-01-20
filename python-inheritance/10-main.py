@@ -6,3 +6,5 @@ s = Square(13)
 print(s)
 print(s.area())
 
+ss = Square("13")
+
