@@ -2,7 +2,7 @@
 
 >>> MyList = __import__('1-my_list').MyList
 
-"check instantiation"
+"check instantiation and empty"
 >>> a_list = MyList()
 >>> a_list.print_sorted()
 []
@@ -17,3 +17,20 @@ True
 >>> a_list.append(1)
 >>> a_list.print_sorted()
 [1]
+
+"check __str__"
+>>> a_list = MyList()
+>>> a_list.append("__str__")
+>>> a_list.print_sorted()
+["__str__"]
+
+"check unsorted append and negative numbers and new list"
+>>> a_list = MyList()
+>>> a_list.append(4)
+>>> a_list.append(-8)
+>>> a_list.append(5)
+>>> a_list.print_sorted()
+[-8, 4, 5]
+>>> print(a_list)
+[4, -8, 5]
+>>> a_list.print_sorted()
