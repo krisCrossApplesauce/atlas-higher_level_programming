@@ -22,7 +22,7 @@ True
 >>> a_list = MyList()
 >>> a_list.append("__str__")
 >>> a_list.print_sorted()
-["__str__"]
+['__str__']
 
 "check unsorted append and negative numbers and new list"
 >>> a_list = MyList()
@@ -34,3 +34,4 @@ True
 >>> print(a_list)
 [4, -8, 5]
 >>> a_list.print_sorted()
+[-8, 4, 5]
