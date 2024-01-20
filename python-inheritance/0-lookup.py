@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """does stuff"""
-    return dir(obj)
+    return list(dir(obj))
