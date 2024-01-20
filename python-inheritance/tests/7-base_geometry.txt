@@ -5,31 +5,73 @@
 "check instantiation and area method"
 >>> a_shape = BaseGeometry()
 >>> a_shape.area()
-[Exception] area() is not implemented
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
 
-"check integer_validator method pt.1"
+"check integer_validator method, no args"
 >>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-"check integer_validator method pt.2"
+"check integer_validator method, control test"
 >>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", 1)
 
-"check integer_validator pt.3"
+"check integer_validator, value is 0"
 >>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", 0)
-[ValueError] age must be greater than 0
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+"check integer_validator, value is negative"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", -4)
-[ValueError] age must be greater than 0
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+"check integer_validator, value is string"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", "4")
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+"check integer_validator, value is tuple"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", (4,))
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+"check integer_validator, value is list"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", [3])
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+"check integer_validator, value is boolean"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", True)
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+"check integer_validator, value is dict"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", {3, 4})
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+"check integer_validator, value is None"
+>>> a_shape = BaseGeometry()
 >>> a_shape.integer_validator("age", None)
-[TypeError] age must be an integer
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
