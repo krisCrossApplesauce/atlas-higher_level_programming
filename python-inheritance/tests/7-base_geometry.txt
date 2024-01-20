@@ -2,4 +2,34 @@
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-"check.. ig"
+"check instantiation and area method"
+>>> a_shape = BaseGeometry()
+>>> a_shape.area()
+[Exception] area() is not implemented
+
+"check integer_validator method pt.1"
+>>> a_shape = BaseGeometry()
+>>> a_shape.integer_validator()
+
+"check integer_validator method pt.2"
+>>> a_shape = BaseGeometry()
+>>> a_shape.integer_validator("age", 1)
+
+"check integer_validator pt.3"
+>>> a_shape = BaseGeometry()
+>>> a_shape.integer_validator("age", 0)
+[ValueError] age must be greater than 0
+>>> a_shape.integer_validator("age", -4)
+[ValueError] age must be greater than 0
+>>> a_shape.integer_validator("age", "4")
+[TypeError] age must be an integer
+>>> a_shape.integer_validator("age", (4,))
+[TypeError] age must be an integer
+>>> a_shape.integer_validator("age", [3])
+[TypeError] age must be an integer
+>>> a_shape.integer_validator("age", True)
+[TypeError] age must be an integer
+>>> a_shape.integer_validator("age", {3, 4})
+[TypeError] age must be an integer
+>>> a_shape.integer_validator("age", None)
+[TypeError] age must be an integer
