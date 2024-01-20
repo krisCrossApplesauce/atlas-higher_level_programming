@@ -1,0 +1,19 @@
+"Tests for 1-my_list.py"
+
+>>> MyList = __import__('1-my_list').MyList
+
+"check instantiation"
+>>> a_list = MyList()
+>>> a_list.print_sorted()
+[]
+
+"check inherits from list"
+>>> a_list = MyList()
+>>> print(isinstance(a_list, list))
+True
+
+"check append"
+>>> a_list = MyList()
+>>> a_list.append(1)
+>>> a_list.print_sorted()
+[1]
