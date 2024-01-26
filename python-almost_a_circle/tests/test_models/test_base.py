@@ -9,7 +9,7 @@ import unittest
 class TestBase(unittest.TestCase):
     """ unittest for Base class """
 
-    def test_ID(self):
+    def test_id(self):
         """
         Testing that Base():
         - automatically assigns an ID
