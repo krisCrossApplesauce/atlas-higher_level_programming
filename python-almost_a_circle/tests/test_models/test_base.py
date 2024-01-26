@@ -9,12 +9,11 @@ import unittest
 class TestBase(unittest.TestCase):
     """ unittest for Base class """
 
-    def testID(self):
+    def test_ID(self):
         """
         Testing that Base():
         - automatically assigns an ID
-        - automatically assigns an ID that is +1
-          of the previous automatically assigned ID
+        - automatically assigns ID's incrementally
         - assigns a given ID
         """
         b1 = Base()
