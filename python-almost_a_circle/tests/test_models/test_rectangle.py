@@ -18,6 +18,10 @@ class testRectangle(unittest.TestCase):
         r1 = Rectangle(1, 2)
         r2 = Rectangle(1, 2, 3)
         r3 = Rectangle(1, 2, 3, 4)
+        self.assertIsInstance(r1, Rectangle)
+        self.assertIsInstance(r2, Rectangle)
+        self.assertIsInstance(r3, Rectangle)
+
         with self.assertRaises(TypeError):
             r4 = Rectangle("1", 2)
         with self.assertRaises(TypeError):
@@ -26,4 +30,6 @@ class testRectangle(unittest.TestCase):
             r6 = Rectangle(1, 2, "3")
         with self.assertRaises(TypeError):
             r7 = Rectangle(1, 2, 3, "4")
+
         r8 = Rectangle(1, 2, 3, 4, 5)
+        self.assertIsInstance(r8, Rectangle)
