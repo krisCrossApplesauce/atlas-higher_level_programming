@@ -15,10 +15,10 @@ class testRectangle(unittest.TestCase):
         r2 = Rectangle(1, 2, 3)
         r3 = Rectangle(1, 2, 3, 4)
         r4 = Rectangle(1, 2, 3, 4, 5)
-        self.assertIsInstance(r1, Rectangle)
-        self.assertIsInstance(r2, Rectangle)
-        self.assertIsInstance(r3, Rectangle)
-        self.assertIsInstance(r4, Rectangle)
+        self.assertIsInstance(r1, Rectangle, "not instance")
+        self.assertIsInstance(r2, Rectangle, "not instance")
+        self.assertIsInstance(r3, Rectangle, "not instance")
+        self.assertIsInstance(r4, Rectangle, "not instance")
 
     def test_typeerror(self):
         """ Testing that Rectangle raises TypeErrors when necessary """
@@ -60,3 +60,8 @@ class testRectangle(unittest.TestCase):
         """ Testing that the area method of Rectangle works """
         r1 = Rectangle(3, 5)
         self.assertEqual(r1.area(), 15)
+
+    def test_display(self):
+        """ Testing that the display method of Rectangle works """
+        r1 = Rectangle(2, 4)
+        self.assertIsNone(r1.display())
