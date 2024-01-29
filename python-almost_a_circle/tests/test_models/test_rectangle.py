@@ -18,8 +18,12 @@ class testRectangle(unittest.TestCase):
         r1 = Rectangle(1, 2)
         r2 = Rectangle(1, 2, 3)
         r3 = Rectangle(1, 2, 3, 4)
-        r4 = Rectangle("1", 2)
-        r5 = Rectangle(1, "2")
-        r6 = Rectangle(1, 2, "3")
-        r7 = Rectangle(1, 2, 3, "4")
+        with self.assertRaises(TypeError):
+            r4 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r5 = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r6 = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r7 = Rectangle(1, 2, 3, "4")
         r8 = Rectangle(1, 2, 3, 4, 5)
