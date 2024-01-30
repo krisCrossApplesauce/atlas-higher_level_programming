@@ -51,6 +51,19 @@ class Rectangle(Base):
                 print("#", end="")
             print("")
 
+    def update(self, *args):
+        """ assigns an arg to each attribute """
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.__width = args[1]
+        if len(args) > 2:
+            self.__height = args[2]
+        if len(args) > 3:
+            self.__x = args[3]
+        if len(args) > 4:
+            self.__y = args[4]
+
     def __str__(self):
         """ overriding the __str__ method """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} " \
