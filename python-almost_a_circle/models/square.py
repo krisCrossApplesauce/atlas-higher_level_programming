@@ -20,16 +20,16 @@ class Square(Rectangle):
 
     def area(self):
         """ returns the area of the Square instance """
-        return self.__size * self.__size
+        return self.__width * self.__height
 
     def display(self):
         """ prints in stdout the Square instance using the char # """
         for _ in range(self.__y):
             print("")
-        for _ in range(self.__size):
+        for _ in range(self.__width):
             for _ in range(self.__x):
                 print(" ", end="")
-            for _ in range(self.__size):
+            for _ in range(self.__height):
                 print("#", end="")
             print("")
 
@@ -46,21 +46,22 @@ class Square(Rectangle):
     def __str__(self):
         """ overriding the __str__ method """
         return f"[Square] ({self.id}) {self.__x}/{self.__y} " \
-            + f"- {self.__size}"
+            + f"- {self.__width}"
 
     @property
     def size(self):
         """ size getter """
-        return self.__size
+        return self.__width
 
     @size.setter
     def size(self, size):
         """ size setter """
         if type(size) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if size <= 0:
-            raise ValueError("size must be > 0")
-        self.__size = size
+            raise ValueError("width must be > 0")
+        self.__width = size
+        self.__height = size
 
     @property
     def x(self):
